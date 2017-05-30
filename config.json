@@ -1,0 +1,8 @@
+{
+    "menu": [
+        ["Home", "/"],
+        ["Make an Account", "/Make"],
+        ["Login", "/Login"],
+        ["User Account", "/Account"]
+    ]
+}

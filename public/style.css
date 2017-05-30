@@ -1,0 +1,24 @@
+body{
+    background-color:#5BB;
+}
+li{
+    font-family: monospace;
+    font-size: 1.5em;
+    
+    display: inline-block;
+    padding: 10px;
+    background-color: #5FF;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+li:hover{
+    background-color: #5DD;
+}
+ul{
+ 
+        margin: 20px;
+        
+}

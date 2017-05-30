@@ -1,0 +1,27 @@
+{
+  "name": "thedataexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Unholydeath/IDK_TheDataExpress.git"
+  },
+  "author": "Braden, Bryson, Matthew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Unholydeath/IDK_TheDataExpress/issues"
+  },
+  "homepage": "https://github.com/Unholydeath/IDK_TheDataExpress#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-sessions": "^1.0.6",
+    "mongoose": "^4.10.2",
+    "pug": "^2.0.0-rc.1"
+  }
+}
