@@ -4,10 +4,11 @@ body{
 li{
     font-family: monospace;
     font-size: 1.5em;
-    
     display: inline-block;
     padding: 10px;
     background-color: #5FF;
+    border-radius: 10px;
+    margin: 5px;
 }
 a{
     text-decoration: none;
@@ -16,6 +17,7 @@ a{
 }
 li:hover{
     background-color: #5DD;
+    box-shadow: 5px 5px 10px grey;
 }
 ul{
  
