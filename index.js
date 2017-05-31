@@ -5,7 +5,8 @@ var express = require('express'),
     sessions = require('express-sessions'),
     bodyparser = require('body-parser'),
     bcrypt = require('bcrypt-nodejs'),
-    config = require('./config.json');
+    config = require('./config.json'),
+    hash;
 
 var app = express();
 app.set('view engine', 'pug');
@@ -33,5 +34,23 @@ app.get('/:viewname', function(req, res){
    });
     
 });
+
+//bcrypt.hash(, null, null, function(err, hash){
+//    bcrypt.compare(, hash, function(err, res){
+//        
+//    });
+//    bcrypt.compare(, hash, function(err, res){
+//        
+//    });
+//})
+
+//app.post('/', urlencodedParser, function(req, res){
+//    if(req.body.username ==  && req.body.password == ){
+//        req.session.user = {isAuthenticated: true, username: req.body.username};
+//        res.redirect('/private');
+//    }else{
+//        res.redirect('/logout');
+//    }
+//});
 
 app.listen(3000);
