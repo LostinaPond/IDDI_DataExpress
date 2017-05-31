@@ -1,5 +1,14 @@
+html{
+    
+    background-color:#3676E8;
+}
 body{
-    background-color:#5BB;
+    
+    background-color:#48BAFF;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 10px;
+    padding:15px;
 }
 li{
     font-family: monospace;
@@ -18,4 +27,8 @@ a{
 li:hover{
     background-color: #5DD;
     box-shadow: 5px 5px 10px grey;
+}
+#footer{
+    text-align: center;
+    font-style: italic;
 }
