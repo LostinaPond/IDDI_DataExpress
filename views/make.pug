@@ -2,15 +2,43 @@ extends layout
 block content
     h1 Make an Account
     hr
-    form(action = '', method = 'POST') 
+    form(action = '', method = '') 
         p Username: 
             input(type = 'text', name = 'username', value = '')
         p Password: 
             input(type = 'text', name = 'password', value = '')
-        p Question 1: 
-        
-        p Question 2: 
-        
-        p Question 3: 
-        
+        p E-mail: 
+            input(type = 'text', name = 'e-mail', value = '')
+        p Age: 
+            input(type = 'text', name = 'age', value = '')
+        p Question 1: Which is your favorite color?
+        p
+            input(type = 'radio', name = 'q1', value = 'Stuff')
+            | Red
+            input(type = 'radio', name = 'q1', value = 'Stuff')
+            | Blue
+            input(type = 'radio', name = 'q1', value = 'Stuff')
+            | Green
+            input(type = 'radio', name = 'q1', value = 'Stuff')
+            | Orange
+        p Question 2: Which food would you prefer?
+        p
+            input(type = 'radio', name = 'q2', value = 'Stuff')
+            | Burger
+            input(type = 'radio', name = 'q2', value = 'Stuff')
+            | Pizza
+            input(type = 'radio', name = 'q2', value = 'Stuff')
+            | Chow Mein
+            input(type = 'radio', name = 'q2', value = 'Stuff')
+            | I don't like food
+        p Question 3: What's your favorite Soda
+        p
+            input(type = 'radio', name = 'q3', value = 'Stuff')
+            | Coke
+            input(type = 'radio', name = 'q3', value = 'Stuff')
+            | Dr. Pepper
+            input(type = 'radio', name = 'q3', value = 'Stuff')
+            | Pepsi
+            input(type = 'radio', name = 'q3', value = 'Stuff')
+            | Mtn Dew       
         button(type = 'Submit', name = 'submit', value = 'Submit')
