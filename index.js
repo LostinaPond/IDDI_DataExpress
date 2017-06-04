@@ -45,11 +45,13 @@ app.get('/:viewname', function(req, res){
 //})
 
 //app.post('/', urlencodedParser, function(req, res){
-//    if(req.body.username ==  && req.body.password == ){
-//        req.session.user = {isAuthenticated: true, username: req.body.username};
-//        res.redirect('/private');
-//    }else{
-//        res.redirect('/logout');
+//    for(var i = 0; i < .length; i++){
+//        if(req.body.username ==  && req.body.password == ){
+//            req.session.user = {isAuthenticated: true, username: req.body.username};
+//            res.redirect('/private');
+//        }else{
+//            res.redirect('/logout');
+//        }
 //    }
 //});
 
