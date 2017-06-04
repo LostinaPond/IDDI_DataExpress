@@ -2,6 +2,10 @@ extends layout
 block content
     h1 Welcome to The Data Express
     hr
-    h2 The way people answered the account creation questions
-    h3(class = barchart)
-        
+    h2 People's Favorite Drinks
+    canvas(id="myCanvas" height="400" width="650")
+    h2 People's Favorite Color
+    canvas(id="myCanvas" height="400" width="650")
+    h2 People's Favorite Food
+    canvas(id="myCanvas" height="400" width="650")
+    script(src="script.js")

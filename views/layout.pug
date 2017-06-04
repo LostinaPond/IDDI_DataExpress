@@ -5,7 +5,7 @@ html
         block vars
         title #{title}
         link(href='style.css', rel='stylesheet')
-    body
+    body(onLoad="init()")
         header
             nav
                 ul
@@ -16,7 +16,6 @@ html
         div(id='content', class='item')
             hr
             block content
-        script(src="script.js")
         footer
             p(id="footer") &copy;DataExpress 2017
         

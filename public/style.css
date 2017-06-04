@@ -32,3 +32,17 @@ li:hover{
     text-align: center;
     font-style: italic;
 }
+#myCanvas{
+    border:1px solid #dddddd;
+    
+}
+#output{
+    display: inline-block;
+    align-content: center;
+}
+#canvas{
+    background: #ffffff;
+    box-shadow:5px 5px 5px #ccc;
+	border:5px solid #eee;
+	margin-bottom:10px;
+}
