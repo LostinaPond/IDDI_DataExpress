@@ -8,6 +8,8 @@ var express = require('express'),
     config = require('./config.json'),
     hash;
 
+var Account = mongoose.model('Account', route.accountSchema);
+
 var app = express();
 app.set('view engine', 'pug');
 app.set('views',__dirname+'/views');
@@ -35,17 +37,16 @@ app.get('/:viewname', function(req, res){
     
 });
 
-//bcrypt.hash(, null, null, function(err, hash){
-//    bcrypt.compare(, hash, function(err, res){
-//        
+//function toHash(username, password){
+//    bcrypt.hash(password, null, null, function (err, hash) {
+//        console.log(hash);
+//        bcrypt.compare(password, hash, function (err, res) {
+//            
+//        });
 //    });
-//    bcrypt.compare(, hash, function(err, res){
-//        
-//    });
-//})
+//}
 
 //app.post('/', urlencodedParser, function(req, res){
-//    for(var i = 0; i < .length; i++){
 //        if(req.body.username ==  && req.body.password == ){
 //            req.session.user = {isAuthenticated: true, username: req.body.username};
 //            res.redirect('/private');
@@ -54,5 +55,9 @@ app.get('/:viewname', function(req, res){
 //        }
 //    }
 //});
+
+Account.findOne({'account.username': username}, function(err, account){
+    console.log(account.password);
+});
 
 app.listen(3000);
