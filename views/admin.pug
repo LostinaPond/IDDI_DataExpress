@@ -1,0 +1,39 @@
+extends layout
+block content
+    h1 Administrator View
+
+    h3 Open Accounts:
+    
+    table
+        tr
+            th Id
+            th Username
+            th Password
+            th User Level
+            th Email
+            th Age
+            th Answer 1
+            th Answer 2
+            th Answer 3
+            th
+            th
+        each account in accounts
+            tr
+                td 
+                    a(href='/details/' + account.id) #{account.id}
+                td #{account.username}
+                td #{account.password}
+                td #{account.userLevel}
+                td #{account.email}
+                td #{account.age}
+                td #{account.answer1}
+                td #{account.answer2}
+                td #{account.answer3}
+                td
+                    a(href='/edit/' + account.id) Edit
+                td
+                    a(href='/delete/' + account.id) Delete
+
+    br
+    h3 Create new Account:
+        a(href='/create') Add Account
