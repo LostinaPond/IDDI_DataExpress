@@ -5,10 +5,11 @@ var express = require('express'),
     sessions = require('express-sessions'),
     bodyparser = require('body-parser'),
     bcrypt = require('bcrypt-nodejs'),
+    route = require('./routes/routes.js'),
     config = require('./config.json'),
     hash;
 
-var Account = mongoose.model('Account', route.accountSchema);
+//var Account = mongoose.model('Account', route.accountSchema);
 
 var app = express();
 app.set('view engine', 'pug');
@@ -56,8 +57,10 @@ app.get('/:viewname', function(req, res){
 //    }
 //});
 
-Account.findOne({'account.username': username}, function(err, account){
-    console.log(account.password);
-});
+function loginCompare(username, password) {
+     route.findOne({'account.username': username}, function (err, account) {
+         console.log(account.password);
+     });
+ }
 
 app.listen(3000);
