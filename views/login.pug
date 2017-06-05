@@ -2,9 +2,11 @@ extends layout
 block content
     h1 Login Page
     hr
-    form(action="/account")
-    p Username:
-    input(type="text" name="username" value="user")
-    p Password:
-    input(type="text" name="pass" value="pass")
-    input(type="submit" value="Submit")
+    div(id='loginForm')
+        form(action="/account")
+        p Username:
+        input(type="text" name="username" value="Enter username")
+        p Password:
+        input(type="text" name="pass" value="Enter password")
+        br
+        input(type="submit" value="Submit" id="submitButton")

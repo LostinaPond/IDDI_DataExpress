@@ -2,10 +2,13 @@ extends layout
 block content
     h1 Welcome to The Data Express
     hr
-    h2 People's Favorite Drinks
-    canvas(id="myCanvas" height="400" width="650")
-    h2 People's Favorite Color
-    canvas(id="myCanvas" height="400" width="650")
-    h2 People's Favorite Food
-    canvas(id="myCanvas" height="400" width="650")
+    div(id="top")
+        h2(class="content") People's Favorite Drinks
+        canvas(class="content" id="myCanvas" height="400" width="650")
+    div(id="mid")
+        h2(class="content") People's Favorite Color
+        canvas(class="content" id="myCanvas1" height="400" width="650")
+    div(id="bottom")
+        h2(class="content") People's Favorite Food
+        canvas(class="content" id="myCanvas2" height="400" width="650")
     script(src="script.js")

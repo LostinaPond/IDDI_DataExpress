@@ -1,5 +1,5 @@
 html{
-    
+    font-family: 'Fira Mono', monospace;
     background-color:#3676E8;
 }
 body{
@@ -40,9 +40,29 @@ li:hover{
     display: inline-block;
     align-content: center;
 }
-#canvas{
+#myCanvas{
     background: #ffffff;
     box-shadow:5px 5px 5px #ccc;
 	border:5px solid #eee;
 	margin-bottom:10px;
+}
+#myCanvas1{
+    background: #ffffff;
+    box-shadow:5px 5px 5px #ccc;
+	border:5px solid #eee;
+	margin-bottom:10px;
+}
+#myCanvas2{
+    background: #ffffff;
+    box-shadow:5px 5px 5px #ccc;
+	border:5px solid #eee;
+	margin-bottom:10px;
+}
+#loginForm{
+    font-size: 1.5em;
+    align-content: center;
+    text-align: center;
+    background: #bbb;
+    box-shadow:5px 5px 5px grey;
+    padding: 15px;
 }
