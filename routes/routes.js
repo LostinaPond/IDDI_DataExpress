@@ -25,6 +25,14 @@ var accountSchema = mongoose.Schema({
 
 var Account = mongoose.model('Account_Collection', accountSchema);
 
+exports.account = function(req, res){
+
+    res.render('account', {
+        title: 'User Account',
+        "config": config
+    });
+};
+
 exports.admin = function(req, res) {
     Account.find(function(account){
         res.render('admin', {
@@ -34,19 +42,30 @@ exports.admin = function(req, res) {
     })
 };
 
-exports.create = function(req, res){
-    res.render('make', {
-        title: 'Make Account'
+exports.login = function(req, res){
+
+    res.render('login', {
+        title: 'Login',
+        "config": config
     })
 }
 
-exports.createAccount = function(req, res){
+exports.make = function(req, res){
+    
+    res.render('make', {
+        title: 'Make an Account',
+        "config": config
+    });
+};
 
-    bcrypt.hash(req.body.password, null, null, function(hash){
+exports.makeAccount = function(req, res){
+
+    //bcrypt.hash(req.body.password, null, null, function(hash){
 
         var account = new Account({
             username: req.body.username,
-            password: hash,
+            //password: hash,
+            password: req.body.password,
             userLevel: req.body.userLevel,
             email: req.body.email,
             age: req.body.age,
@@ -54,7 +73,7 @@ exports.createAccount = function(req, res){
             answer2: req.body.answer2,
             answer3: req.body.answer3
         });
-    });
+    //});
     account.save(function (account){
         console.log('Username: ' + req.body.username + ' with userlevel: ' + userLevel + ' was created');
     });
@@ -103,11 +122,11 @@ exports.delete = function(req, res){
 
 exports.index = function(req, res){
     
-    var obj = {
-        title: "The Data Express"
-    };
-   res.render('Index', {
-        "obj" : obj,
+    // var obj = {
+    //     title: "The Data Express"
+    // };
+   res.render('index', {
+        title: "The Data Express",
        "config": config
    });
     
