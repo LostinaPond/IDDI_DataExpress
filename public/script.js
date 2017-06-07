@@ -35,7 +35,7 @@ function init() {
     var columnSize = 50;
     var rowSize = 60;
     var margin = 10;
-    var header = "# of People"
+    var header = "% of People"
 
     function diffCanvas(canvasName, name, value) {
 
@@ -71,15 +71,6 @@ function init() {
             computeHeight(value[i]);
             context.fillText(name[i], xScale * (i + 1), y - margin);
         }
-
-        // shadow for graph's bar lines with color and offset
-
-        context.fillStyle = "#9933FF;";
-        context.shadowColor = 'rgba(128,128,128, 0.5)';
-
-        //shadow offset along X and Y direction 
-        context.shadowOffsetX = 9;
-        context.shadowOffsetY = 3;
 
         // translate to bottom of graph  inorder to match the data 
         context.translate(0, canvas.height - margin);
