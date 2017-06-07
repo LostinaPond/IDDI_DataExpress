@@ -63,8 +63,18 @@ function loginCompare(username, password) {
      });
  }
 
-function saveUser(){
-    
+function saveUser(username, password, email, age, answer1, answer2, answer3){
+    var newUser = User({
+        username: username,
+        password: password,
+        userLevel: false,
+        email: email,
+        answer1: answer1,
+        answer2: answer2,
+        answer3: answer3
+    });
+    newUser.save(err);
+    console.log('user saved');
 }
 
 app.listen(3000);
