@@ -9,6 +9,8 @@ var express = require('express'),
     config = require('./config.json'),
     hash;
 
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+
 var checkAuth = function (req, res, next) {
     if (req.session.user && req.session.user.isAuthenticated) {
         next();
