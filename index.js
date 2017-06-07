@@ -24,7 +24,7 @@ app.set('view engine', 'pug');
 app.set('views',__dirname+'/views');
 app.use(express.static(path.join(__dirname+'/public')));
 
-app.use(expressSession({secret: '5ecretP455c0de', saveUninitialized: true, resave: true}));
+app.use(sessions({secret: '5ecretP455c0de', saveUninitialized: true, resave: true}));
 
 app.get('/', route.index);
 app.get('/admin', route.admin);
