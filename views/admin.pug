@@ -17,23 +17,23 @@ block content
             th Answer 3
             th
             th
-        each account in accounts
+        each item in accounts
             tr
                 td 
-                    a(href='/details/' + account.id) #{account.id}
-                td #{account.username}
-                td #{account.password}
-                td #{account.userLevel}
-                td #{account.email}
-                td #{account.age}
-                td #{account.answer1}
-                td #{account.answer2}
-                td #{account.answer3}
+                    a(href='/details/' + item.id) #{item.id}
+                td #{item.username}
+                td #{item.password}
+                td #{item.userLevel}
+                td #{item.email}
+                td #{item.age}
+                td #{item.answer1}
+                td #{item.answer2}
+                td #{item.answer3}
                 td
-                    a(href='/edit/' + account.id) Edit
+                    a(href='/edit/' + item.id) Edit
                 td
-                    a(href='/delete/' + account.id) Delete
+                    a(href='/delete/' + item.id) Delete
 
     br
     h3 Create new Account:
-        a(href='/create') Add Account
+        a(href='/make') Add Account
