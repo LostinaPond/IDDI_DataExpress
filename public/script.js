@@ -1,19 +1,19 @@
-//var mongoose = require('mongoose');
-//var db = mongoose.connect('mongodb://localhost/data');
-//var userSchema = new mongoose.Schema({name:String,password:String});
-// var userModel =db.model('userlists',userSchema);
-// var anand = new userModel({ name: 'anand', password: 'abcd'});
-// anand.save(function (err, docs) {
-//   if (err) {
-//       console.log('Error');
-//   } else {
-//       userModel.count({name: 'anand'}, function(err, c) {
-//           console.log('Count is ' + c);
-//      });
-//   }
-// }); 
 
-var Val_Max;
+
+var itemValueData11 = 0;
+var itemValueData12 = 0;
+var itemValueData13 = 0;
+var itemValueData14 = 0;
+var itemValueData21 = 0;
+var itemValueData22 = 0;
+var itemValueData23 = 0;
+var itemValueData24 = 0;
+var itemValueData31 = 0;
+var itemValueData32 = 0;
+var itemValueData33 = 0;
+var itemValueData34 = 0;
+var count = 0;
+var Val_Max = count + 10;
 var Val_Min;
 var sections;
 var xScale;
@@ -21,17 +21,16 @@ var yScale;
 var y;
 // values of each item on the graph
 var itemName = ["Mtn. Dew", "Coke", "Dr. Pepper", "Pepsi"];
-var itemValue = [14, 7, 4, 4];
+var itemValue = [itemValueData11, itemValueData12, itemValueData13, itemValueData14];
 var itemName1 = ["Burger", "Pizza", "Chow Mein", "I don't like food"];
-var itemValue1 = [5, 2, 1, 4];
+var itemValue1 = [itemValueData21, itemValueData22, itemValueData23, itemValueData24];
 var itemName2 = ["Red", "Blue", "Green", "Orange"];
-var itemValue2 = [14, 7, 4, 4];
+var itemValue2 = [itemValueData31, itemValueData32, itemValueData33, itemValueData34];
 
 function init() {
     // intialize values for each variables
     sections = 4;
     //needs to see how big the database is 
-    Val_Max = 14;
     var stepSize = 1;
     var columnSize = 50;
     var rowSize = 60;
@@ -51,10 +50,10 @@ function init() {
         context.strokeStyle = "#000;"; // background black lines
         context.beginPath();
         // column names 
-        context.font = "19 pt Arial;"
+        context.font = "36 pt Arial;"
         context.fillText(header, 0, columnSize - margin);
         // draw lines in the background
-        context.font = "16 pt Helvetica"
+        context.font = "19 pt Helvetica"
         var count = 0;
         for (scale = Val_Max; scale >= 0; scale = scale - stepSize) {
             y = columnSize + (yScale * count * stepSize);

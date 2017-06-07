@@ -7,6 +7,7 @@ var express = require('express'),
     bcrypt = require('bcrypt-nodejs'),
     route = require('./routes/routes.js'),
     config = require('./config.json'),
+    urlencodedParser = bodyparser.urlencoded({ extended: false}),
     hash;
 
 //var Account = mongoose.model('Account', route.accountSchema);

@@ -2,14 +2,18 @@ extends layout
 block content
     h1 Welcome to The Data Express
     hr
-    div(id="top")
-        h2(class="content") People's Favorite Drinks
-        canvas(class="content" id="myCanvas" height="400" width="650")
-    div(id="mid")
-        h2(class="content") People's Favorite Color
-        canvas(class="content" id="myCanvas1" height="400" width="650")
-    div(id="bottom")
-        h2(class="content") People's Favorite Food
-        canvas(class="content" id="myCanvas2" height="400" width="650")  
+    h2 Definition of a website
+    h3 A website is a collection of related web pages, including multimedia content, typically identified with a common domain name, and published on at least one web server. A website may be accessible via a public Internet Protocol (IP) network, such as the Internet, or a private local area network (LAN), by referencing a uniform resource locator (URL) that identifies the site.Websites have many functions and can be used in various fashions; a website can be a personal website, a commercial website for a company, a government website or a non-profit organization website. Websites are typically dedicated to a particular topic or purpose, ranging from entertainment and social networking to providing news and education. All publicly accessible websites collectively constitute the World Wide Web, while private websites, such as a company's website for its employees, are typically a part of an intranet. Web pages, which are the building blocks of websites, are documents, typically composed in plain text interspersed with formatting instructions of Hypertext Markup Language (HTML, XHTML). 
+    h1 Check out these Awesome Graphs!
+    div(id="graphs")
+        div(id="top")
+            h2 People's Favorite Drinks
+            canvas(id="myCanvas" height="400" width="650")
+        div(id="mid")
+            h2 People's Favorite Color
+            canvas(id="myCanvas1" height="400" width="650")
+        div(id="bottom")
+            h2 People's Favorite Food
+            canvas(id="myCanvas2" height="400" width="650")  
     script(src="script.js")
     
