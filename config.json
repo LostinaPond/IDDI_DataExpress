@@ -1,8 +1,8 @@
 {
     "menu": [
         ["Home", "/"],
-        ["Make an Account", "/Make"],
-        ["Login", "/Login"],
-        ["User Account", "/Account"]
+        ["Make an Account", "/make"],
+        ["Login", "/login"],
+        ["User Account", "/account"]
     ]
 }

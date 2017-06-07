@@ -7,12 +7,7 @@ var express = require('express'),
     bcrypt = require('bcrypt-nodejs'),
     route = require('./routes/routes.js'),
     config = require('./config.json'),
-    urlencodedParser = bodyParser.urlencoded({ extended: false}),
     hash;
-
-//var Account = mongoose.model('Account', route.accountSchema);
-
-
 
 var checkAuth = function (req, res, next) {
     if (req.session.user && req.session.user.isAuthenticated) {
@@ -38,8 +33,9 @@ app.get('/login', route.login);
 app.post('/make', urlencodedParser, route.makeAccount);
 app.post('/edit/:id', urlencodedParser, route.editAccount);
 app.post('/login', urlencodedParser, function (req, res){
-
-     if (req.body.username == 'admin' && req.body.password == 'pass') {
+    console.log(req.body.username);
+    console.log(req.body.password);
+     if (req.body.username == 'admin' && req.body.pass == 'pass') {
         req.session.user = { isAuthenticated: true, username: req.body.username};
         res.redirect('/admin');
     } else {

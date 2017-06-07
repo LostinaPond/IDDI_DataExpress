@@ -3,10 +3,10 @@ block content
     h1 Login Page
     hr
     div(id='loginForm')
-        form(action="/account")
-        p Username:
-        input(type="text" name="username" value="Enter username")
-        p Password:
-        input(type="text" name="pass" value="Enter password")
-        br
-        input(type="submit" value="Submit" id="submitButton" onClick='loginCompare(username, password)')
+        form( method='post', action='/login')
+            p Username:
+            input(type="text" name="username" value="Enter username")
+            p Password:
+            input(type="text" name="pass" value="Enter password")
+            br
+            input(type="submit" value="Submit" id="submitButton" /*onClick='loginCompare(username, password)'*/)
