@@ -68,19 +68,19 @@ exports.makeAccount = function(req, res){
             username: req.body.username,
             //password: hash,
             password: req.body.password,
-            userLevel: req.body.userLevel,
+            userLevel: 'user',
             email: req.body.email,
             age: req.body.age,
-            answer1: req.body.answer1,
-            answer2: req.body.answer2,
-            answer3: req.body.answer3
+            answer1: req.body.q1,
+            answer2: req.body.q2,
+            answer3: req.body.q3
         });
     //});
     account.save(function (account){
-        console.log('Username: ' + req.body.username + ' with userlevel: ' + userLevel + ' was created');
+        console.log('Username: ' + req.body.username + ' with userlevel: ' + req.body.userLevel + ' was created');
     });
 
-    res.redirect('/admin');
+    res.redirect('/');
 };
 
 exports.edit = function(req, res){
@@ -99,12 +99,12 @@ exports.editAccount = function (req, res){
 
             //account.username = req.body.username;
             account.password = hash;
-            account.userLevel = req.body.userLevel;
+            account.userLevel = 'user';
             account.email = req.body.email;
             account.age = req.body.age;
-            account.answer1 = req.body.answer1;
-            account.answer2 = req.body.answer2;
-            account.answer3 = req.body.answer3;
+            account.answer1 = req.body.q1;
+            account.answer2 = req.body.q2;
+            account.answer3 = req.body.q3;
         })
 
         account.save(function(account){
