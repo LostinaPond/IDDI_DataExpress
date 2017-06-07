@@ -3,7 +3,7 @@ var express = require('express'),
     path = require('path'),
     mongoose = require('mongoose'),
     sessions = require('express-session'),
-    bodyparser = require('body-parser'),
+    bodyParser = require('body-parser'),
     bcrypt = require('bcrypt-nodejs'),
     route = require('./routes/routes.js'),
     config = require('./config.json'),
@@ -11,6 +11,8 @@ var express = require('express'),
     hash;
 
 //var Account = mongoose.model('Account', route.accountSchema);
+
+var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 var checkAuth = function (req, res, next) {
     if (req.session.user && req.session.user.isAuthenticated) {
