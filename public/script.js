@@ -1,17 +1,17 @@
 
 
-var itemValueData11 = 0;
+var itemValueData11 = 1;
 var itemValueData12 = 0;
-var itemValueData13 = 0;
-var itemValueData14 = 0;
-var itemValueData21 = 0;
+var itemValueData13 = 1;
+var itemValueData14 = 1;
+var itemValueData21 = 3;
 var itemValueData22 = 0;
-var itemValueData23 = 0;
+var itemValueData23 = 1;
 var itemValueData24 = 0;
-var itemValueData31 = 0;
-var itemValueData32 = 0;
+var itemValueData31 = 1;
+var itemValueData32 = 1;
 var itemValueData33 = 0;
-var itemValueData34 = 0;
+var itemValueData34 = 1;
 var count = 0;
 var Val_Max = count + 10;
 var Val_Min;
