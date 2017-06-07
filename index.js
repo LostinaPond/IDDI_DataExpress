@@ -7,6 +7,7 @@ var express = require('express'),
     bcrypt = require('bcrypt-nodejs'),
     route = require('./routes/routes.js'),
     config = require('./config.json'),
+    cookieParser = require('cookie-parser'),
     hash;
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -23,10 +24,22 @@ var app = express();
 app.set('view engine', 'pug');
 app.set('views',__dirname+'/views');
 app.use(express.static(path.join(__dirname+'/public')));
-
+app.use(cookieParser());
 app.use(sessions({secret: '5ecretP455c0de', saveUninitialized: true, resave: true}));
 
-app.get('/', route.index);
+//app.get('/', route.index);
+app.get('/', function(req, res){
+
+    res.cookie('lastVisited', new Date().toUTCString());
+
+    console.log(req.cookies.lastVisited);
+    //res.send(req.cookies.lastVisited);
+    res.render('index', {
+        title: "The Data Express",
+       "config": config,
+       "lastVisited": req.cookies.lastVisited
+    });
+})
 app.get('/admin', route.admin);
 app.get('/account', route.account)
 app.get('/make', route.make);
@@ -59,29 +72,11 @@ app.get('/logout', function (req, res) {
 
 });
 
-//function toHash(username, password){
-//    bcrypt.hash(password, null, null, function (err, hash) {
-//        console.log(hash);
-//        bcrypt.compare(password, hash, function (err, res) {
-//            
-//        });
-//    });
-//}
-
-//app.post('/', urlencodedParser, function(req, res){
-//        if(req.body.username ==  && req.body.password == ){
-//            req.session.user = {isAuthenticated: true, username: req.body.username};
-//            res.redirect('/private');
-//        }else{
-//            res.redirect('/logout');
-//        }
-//    }
-//});
-
 app.post('/login', urlencodedParser, function(req, res){
      route.findOne({'account.username': username}, function (err, account) {
          if(bcrypt.comparesync(password, account.password)){
              req.session.user = {isAuthenticated: true, username: req.account.username};
+             res.redirect('/');
          }else{
              res.redirect('/logout');
          }

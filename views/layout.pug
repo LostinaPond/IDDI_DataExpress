@@ -2,6 +2,7 @@ doctype html
 html
     head
         //-var title = obj.title;
+        //-var cookie = document.cookie;
         block vars
         title #{title}
         link(href='style.css', rel='stylesheet')
@@ -18,5 +19,6 @@ html
             hr
             block content
         footer
+            h5 Last Visited: #{lastVisited}
             p(id="footer") &copy;DataExpress 2017
         

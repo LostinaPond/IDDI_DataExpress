@@ -1,5 +1,6 @@
 var bcrypt = require("bcrypt-nodejs"),
-    config = require('../config.json');
+    config = require('../config.json')
+    cookieParser =require('cookie-parser');
 var hash;
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -29,7 +30,8 @@ exports.account = function(req, res){
 
     res.render('account', {
         title: 'User Account',
-        "config": config
+        "config": config,
+       "lastVisited": req.cookies.lastVisited
     });
 };
 
@@ -40,6 +42,7 @@ exports.admin = function(req, res) {
             title: 'Admin',
             "config": config,
             accounts: account,
+            "lastVisited": req.cookies.lastVisited
         });
     });
 };
@@ -48,7 +51,8 @@ exports.login = function(req, res){
 
     res.render('login', {
         title: 'Login',
-        "config": config
+        "config": config,
+       "lastVisited": req.cookies.lastVisited
     })
 }
 
@@ -56,7 +60,8 @@ exports.make = function(req, res){
     
     res.render('make', {
         title: 'Make an Account',
-        "config": config
+        "config": config,
+       "lastVisited": req.cookies.lastVisited
     });
 };
 
@@ -90,7 +95,8 @@ exports.edit = function(req, res){
     Account.findById(req.params.id, function (account){
         res.render('edit', {
             title: 'Edit Account',
-            account: account
+            account: account,
+            "lastVisited": req.cookies.lastVisited
         })        
     });
 };
@@ -132,7 +138,8 @@ exports.index = function(req, res){
     // };
    res.render('index', {
         title: "The Data Express",
-       "config": config
+       "config": config,
+       "lastVisited": req.cookies.lastVisited
    });
     
     // res.render('index', {
