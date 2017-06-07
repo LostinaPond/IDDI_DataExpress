@@ -78,11 +78,15 @@ app.get('/logout', function (req, res) {
 //    }
 //});
 
-function loginCompare(username, password) {
+app.post('/login', urlencodedParser, function(req, res){
      route.findOne({'account.username': username}, function (err, account) {
-         console.log(account.password);
+         if(bcrypt.comparesync(password, account.password)){
+             req.session.user = {isAuthenticated: true, username: req.account.username};
+         }else{
+             res.redirect('/logout');
+         }
      });
- }
+});
 
 function saveUser(username, password, email, age, answer1, answer2, answer3){
     var newUser = User({
