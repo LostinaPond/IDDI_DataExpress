@@ -39,7 +39,7 @@ exports.admin = function(req, res) {
         res.render('admin', {
             title: 'Admin',
             "config": config,
-            accounts: account
+            accounts: account,
         });
     });
 };
@@ -62,12 +62,13 @@ exports.make = function(req, res){
 
 exports.makeAccount = function(req, res){
 
-    //bcrypt.hash(req.body.password, null, null, function(hash){
+    bcrypt.hash(req.body.password, null, null, function(err, hash){
+
+        console.log('pass: ' + req.body.password + ' hash: ' + hash);
 
         var account = new Account({
             username: req.body.username,
-            //password: hash,
-            password: req.body.password,
+            password: hash,
             userLevel: 'user',
             email: req.body.email,
             age: req.body.age,
@@ -75,12 +76,14 @@ exports.makeAccount = function(req, res){
             answer2: req.body.q2,
             answer3: req.body.q3
         });
-    //});
-    account.save(function (account){
-        console.log('Username: ' + req.body.username + ' with userlevel: ' + req.body.userLevel + ' was created');
-    });
 
-    res.redirect('/');
+        account.save(function (account){
+        console.log('Username: ' + req.body.username + ' with password: ' + hash + ' was created');
+        });
+
+        res.redirect('/');
+    });
+    
 };
 
 exports.edit = function(req, res){
