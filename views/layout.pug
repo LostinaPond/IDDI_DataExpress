@@ -5,6 +5,8 @@ html
         block vars
         title #{title}
         link(href='style.css', rel='stylesheet')
+        link(rel="shortcut icon" href="https://cdn3.iconfinder.com/data/icons/tech-icons/64/Connection-512.png")
+        link(rel="icon" href="https://cdn3.iconfinder.com/data/icons/tech-icons/64/Connection-512.png")
         link(href="https://fonts.googleapis.com/css?family=Fira+Mono|Nova+Mono" rel="stylesheet")
     body(onLoad="init()")
         header
@@ -17,6 +19,7 @@ html
         div(id='content', class='item')
             hr
             block content
+            hr
         footer
             p(id="footer") &copy;DataExpress 2017
         

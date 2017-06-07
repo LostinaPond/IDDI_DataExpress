@@ -1,3 +1,18 @@
+//var mongoose = require('mongoose');
+//var db = mongoose.connect('mongodb://localhost/data');
+//var userSchema = new mongoose.Schema({name:String,password:String});
+// var userModel =db.model('userlists',userSchema);
+// var anand = new userModel({ name: 'anand', password: 'abcd'});
+// anand.save(function (err, docs) {
+//   if (err) {
+//       console.log('Error');
+//   } else {
+//       userModel.count({name: 'anand'}, function(err, c) {
+//           console.log('Count is ' + c);
+//      });
+//   }
+// }); 
+
 var Val_Max;
 var Val_Min;
 var sections;
