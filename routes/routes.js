@@ -34,12 +34,14 @@ exports.account = function(req, res){
 };
 
 exports.admin = function(req, res) {
-    Account.find(function(account){
+    Account.find(function(err, account){
+        if(err) return console.error(err);
         res.render('admin', {
             title: 'Admin',
+            "config": config,
             accounts: account
-        })
-    })
+        });
+    });
 };
 
 exports.login = function(req, res){
